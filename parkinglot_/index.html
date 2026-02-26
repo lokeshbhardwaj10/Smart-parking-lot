@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Parking Lot System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Smart Parking Lot System</h1>
+        
+        <!-- Section 1: Add Slot Form -->
+        <section class="add-slot-section">
+            <h2>Add Parking Slot</h2>
+            <form id="addSlotForm">
+                <div class="form-group">
+                    <label for="slotNumber">Slot Number:</label>
+                    <input type="number" id="slotNumber" placeholder="Enter slot number" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="coveredCheckbox">
+                        Covered?
+                    </label>
+                </div>
+                
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="evChargingCheckbox">
+                        EV Charging?
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn-primary">Add Slot</button>
+            </form>
+            <div id="addSlotMessage" class="message"></div>
+        </section>
+
+        <!-- Section 2: Slot Listing Screen -->
+        <section class="slot-listing-section">
+            <h2>All Parking Slots</h2>
+            <div id="slotsContainer" class="slots-container"></div>
+        </section>
+
+        <!-- Section 3: Park / Remove Screen -->
+        <section class="park-remove-section">
+            <div class="park-vehicle-subsection">
+                <h3>Park Vehicle</h3>
+                <form id="parkVehicleForm">
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="parkNeedsEV">
+                            Needs EV Charging?
+                        </label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="parkNeedsCover">
+                            Needs Cover?
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Park Vehicle</button>
+                </form>
+                <div id="parkMessage" class="message"></div>
+            </div>
+
+            <div class="remove-vehicle-subsection">
+                <h3>Remove Vehicle</h3>
+                <form id="removeVehicleForm">
+                    <div class="form-group">
+                        <label for="removeSlotNumber">Slot Number:</label>
+                        <input type="number" id="removeSlotNumber" placeholder="Enter slot number" required>
+                    </div>
+                    
+                    <button type="submit" class="btn-danger">Remove Vehicle</button>
+                </form>
+                <div id="removeMessage" class="message"></div>
+            </div>
+        </section>
+
+        <!-- Section 4: Output Display Panel -->
+        <section class="output-panel-section">
+            <h2>System Output</h2>
+            <div id="outputPanel" class="output-panel"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
